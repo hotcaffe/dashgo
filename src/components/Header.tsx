@@ -1,10 +1,14 @@
-import { Flex, Text, Input, Icon } from "@chakra-ui/react";
-import {RiSearchLine} from 'react-icons/ri'
+import { Flex, Text, Input, Icon, HStack, Box, Avatar } from "@chakra-ui/react";
+import {
+  RiNotificationLine,
+  RiSearchLine,
+  RiUserAddLine,
+} from "react-icons/ri";
 
 export default function Header() {
   return (
     <Flex
-        as="header"
+      as="header"
       w="100%"
       maxWidth={1480}
       h="20"
@@ -33,14 +37,41 @@ export default function Header() {
         borderRadius="full"
       >
         <Input
-            color="gray.50"
-            variant="unstyled"
-            px="4"
-            mr="4"
-            placeholder="Buscar na plataforma"
-            _placeholder={{color: 'gray.400'}}
+          color="gray.50"
+          variant="unstyled"
+          px="4"
+          mr="4"
+          placeholder="Buscar na plataforma"
+          _placeholder={{ color: "gray.400" }}
         />
-        <Icon as={RiSearchLine} fontSize="20"/>
+        <Icon as={RiSearchLine} fontSize="20" />
+      </Flex>
+      <Flex align="center" ml="auto">
+        <HStack
+          spacing="8"
+          mx="8"
+          pr="8"
+          py="1"
+          color="gray.300"
+          borderRightWidth={1}
+          borderColor="gray.700"
+        >
+          <Icon as={RiNotificationLine} fontSize="20" />
+          <Icon as={RiUserAddLine} fontSize="20" />
+        </HStack>
+        <Flex align="center">
+          <Box mr="4" textAlign="right">
+            <Text>Raphael Fusco</Text>
+            <Text color="gray.300" fontSize="small">
+              raphaelfusco.rar@gmail.com
+            </Text>
+          </Box>
+          <Avatar
+            size="md"
+            name="Raphael Fusco"
+            src="https://github.com/hotcaffe.png"
+          />
+        </Flex>
       </Flex>
     </Flex>
   );
