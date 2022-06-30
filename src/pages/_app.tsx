@@ -2,7 +2,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import Header from "src/components/Header";
-import {theme} from '../styles/theme'
+import { SidebarDrawerProvider } from "src/contexts/SidebarDrawerContext";
+import { theme } from "../styles/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Dashgo</title>
       </Head>
-      <Component {...pageProps} />
+      <SidebarDrawerProvider>
+        <Component {...pageProps} />
+      </SidebarDrawerProvider>
     </ChakraProvider>
   );
 }
